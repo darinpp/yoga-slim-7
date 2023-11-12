@@ -1,4 +1,5 @@
 ## Info
+from `dmidecode`
 ```
 System Information
 	Manufacturer: LENOVO
@@ -8,6 +9,11 @@ System Information
 	SKU Number: LENOVO_MT_83AA_BU_idea_FM_YogaAir 14s APU8
 	Family: YogaAir 14s APU8
 ```
+```
+cat /sys/class/sound/hwC1D0/subsystem_id 
+0x17aa38bb
+```
+
 ## Sound
 It uses TI 2781 for the subwoofer speakers. 
 The support is in kernel 6.6+. The driver's design has two flaws that makes the runtime PM not work very well.

@@ -37,3 +37,18 @@ EOF
 ```
 #### Place the firmware in /lib/firmware
 The files `TIAS2781RCA4.bin` and `TAS2XXX38BB.bin` need to be copies in `/lib/firmware`
+
+#### Controling subwoofer speakers volume
+By default the normal speaker volume controls don't control the volume of the subwoofer's. 
+The 2781 speakers are controller with a separate control
+```
+amixer cget numid=3
+numid=3,iface=CARD,name='Speaker Digital Gain'
+  ; type=INTEGER,access=rw---R--,values=1,min=0,max=200,step=0
+  : values=148
+  | dBscale-min=-100.00dB,step=1.00dB,mute=0
+```
+To make the amp speakers change volume in sync with the volume of the main speakers - use https://github.com/darinpp/alsa-controller
+It will update the digital gain for the amp speakers when the main speaker's volume changes.
+The 2781 driver doesn't expose changing the volume of the L/R speakers separately (even though that should work). 
+So changing the L/R balance won't afect the amp speakers.

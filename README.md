@@ -40,7 +40,7 @@ The files `TIAS2781RCA4.bin` and `TAS2XXX38BB.bin` need to be copies in `/lib/fi
 
 #### Controling subwoofer speakers volume
 By default the normal speaker volume controls don't control the volume of the subwoofer's. 
-The 2781 speakers are controller with a separate control
+The 2781 speakers are controlled with a separate control
 ```
 amixer cget numid=3
 numid=3,iface=CARD,name='Speaker Digital Gain'

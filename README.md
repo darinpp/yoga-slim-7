@@ -33,6 +33,8 @@ cat << EOF >> /etc/rc.local
 echo on > /sys/bus/i2c/drivers/tas2781-hda/i2c-TIAS2781\:00/power/control
 EOF
 ```
+On Fedora the rc.local file is `/etc/rc.d/rc.local`
+
 #### Place the firmware in /lib/firmware
 The files `TIAS2781RCA4.bin` and `TAS2XXX38BB.bin` need to be copies in `/lib/firmware`
 

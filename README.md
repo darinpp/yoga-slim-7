@@ -26,10 +26,8 @@ occurences of `00 00 5c d9` in the `TIAS2781RCA4.bin` file with `00 00 5c 19`. C
 
 To make the subwoofer's work need the following:
 #### Disable driver runtime suspend/resume PM
-as root
+as root (if rc.local doesn't exit - create, make executable and add `#!/bin/sh`)
 ```
-touch /etc/rc.local
-chmod +x /etc/rc.local
 cat << EOF >> /etc/rc.local
 # Disable runtime suspend/resume for tas 2781 as it is not working
 echo on > /sys/bus/i2c/drivers/tas2781-hda/i2c-TIAS2781\:00/power/control
